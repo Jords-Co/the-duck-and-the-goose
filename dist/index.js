@@ -1,1 +1,38 @@
-"use strict";(()=>{var d=()=>{let t=document.querySelectorAll('[data-modal="show"]'),o=document.querySelectorAll('[data-modal="hide"]'),e=document.querySelector('[data-modal="modal"]');!t||!o||!e||(o.forEach(r=>{r.addEventListener("click",()=>{e.classList.add("hide")})}),t.forEach(r=>{r.addEventListener("click",()=>{let a=r.closest('[data-speaker="slide"]');if(!a)return!1;e.querySelector(['[data-modal="name"]']).innerText=a.querySelector('[data-speaker="name"]').innerText,e.querySelector(['[data-modal="title"]']).innerText=a.querySelector('[data-speaker="title"').innerText,e.querySelector(['[data-modal="photo"]']).src=a.querySelector('[data-speaker="photo"]').src,e.querySelector(['[data-modal="biography"]']).innerHTML=a.querySelector('[data-speaker="biography"').innerHTML,e.classList.remove("hide")},{passive:!0})}))};window.Webflow||(window.Webflow=[]);window.Webflow.push(()=>{d()});})();
+"use strict";
+(() => {
+  // bin/live-reload.js
+  new EventSource(`${"http://localhost:3000"}/esbuild`).addEventListener("change", () => location.reload());
+
+  // src/digerati/modal.ts
+  var modal = () => {
+    const showModalLinks = document.querySelectorAll('[data-modal="show"]'), hideModalLinks = document.querySelectorAll('[data-modal="hide"]'), modal2 = document.querySelector('[data-modal="modal"]');
+    if (!showModalLinks || !hideModalLinks || !modal2) {
+      return;
+    }
+    hideModalLinks.forEach((hideModalLink) => {
+      hideModalLink.addEventListener("click", () => {
+        modal2.classList.add("hide");
+      });
+    });
+    showModalLinks.forEach((showModalLink) => {
+      showModalLink.addEventListener("click", () => {
+        let speaker = showModalLink.closest('[data-speaker="slide"]');
+        if (!speaker) {
+          return false;
+        }
+        modal2.querySelector(['[data-modal="name"]']).innerText = speaker.querySelector('[data-speaker="name"]').innerText;
+        modal2.querySelector(['[data-modal="title"]']).innerText = speaker.querySelector('[data-speaker="title"').innerText;
+        modal2.querySelector(['[data-modal="thumbnail"]']).src = speaker.querySelector('[data-speaker="thumbnail"]').src;
+        modal2.querySelector(['[data-modal="biography"]']).innerHTML = speaker.querySelector('[data-speaker="biography"]').innerHTML;
+        modal2.classList.remove("hide");
+      }, { passive: true });
+    });
+  };
+
+  // src/index.ts
+  window.Webflow ||= [];
+  window.Webflow.push(() => {
+    modal();
+  });
+})();
+//# sourceMappingURL=index.js.map

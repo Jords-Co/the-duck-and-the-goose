@@ -23,7 +23,7 @@ export const modal = () => {
             }
             modal.querySelector(['[data-modal="name"]']).innerText = speaker.querySelector('[data-speaker="name"]').innerText;
             modal.querySelector(['[data-modal="title"]']).innerText = speaker.querySelector('[data-speaker="title"').innerText;
-            modal.querySelector(['[data-modal="photo"]']).src = speaker.querySelector('[data-speaker="photo"]').src;
+            modal.querySelector(['[data-modal="thumbnail"]']).src = speaker.querySelector('[data-speaker="thumbnail"]').src;
             modal.querySelector(['[data-modal="biography"]']).innerHTML = speaker.querySelector('[data-speaker="biography"]').innerHTML;
             modal.classList.remove('hide');
         }, { passive: true });
