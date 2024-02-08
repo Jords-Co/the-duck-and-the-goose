@@ -12,13 +12,11 @@ export const modal = () => {
     }
     hideModalLinks.forEach((hideModalLink) => {
         hideModalLink.addEventListener('click', () => {
-            console.log(hideModalLink);
             modal.classList.add('hide');
         });
     });
     showModalLinks.forEach((showModalLink) => {
         showModalLink.addEventListener('click', () => {
-            console.log(showModalLink);
             let speaker = showModalLink.closest('[data-speaker="slide"]');
             if (!speaker) {
                 return false;
