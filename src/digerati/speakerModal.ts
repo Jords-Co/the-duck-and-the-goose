@@ -3,7 +3,7 @@
  * with CMS Collection Item Properties
  * from corresponding Speaker Slider.
  */
-export const modal = () => {
+export const speakerModal = () => {
     const showModalLinks = document.querySelectorAll('[data-modal="show"]'),
         hideModalLinks = document.querySelectorAll('[data-modal="hide"]'),
         modal = document.querySelector('[data-modal="modal"]');
