@@ -1,7 +1,11 @@
 /**
+ * Speaker Modal.
+ * 
  * Dynamically populate Speaker Modal
  * with CMS Collection Item Properties
  * from corresponding Speaker Slider.
+ * 
+ * @author <cabal@digerati.design>
  */
 export const speakerModal = () => {
     const showModalLinks = document.querySelectorAll('[data-modal="show"]'),

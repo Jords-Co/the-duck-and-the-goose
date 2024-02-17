@@ -1,5 +1,7 @@
 /**
- * Eventbrite Modals.
+ * Eventbrite Modal.
+ * 
+ * @author <cabal@digerati.design>
  */
 export const eventbriteModal = () => {
     /* Get Eventbrite Modal Config */
